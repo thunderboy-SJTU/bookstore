@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="basicstruts2" extends="struts-default">
+		<action name="login" class="bookstore3.Action.Login" method="execute">
+			<result name="login">/index.jsp</result>
+			<result name="success">/administrator.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="logout" class="bookstore3.Action.Logout" method="execute">
+			<result name="login">/index.jsp</result>
+			<result name="success">/administrator.jsp</result>
+		</action>
+		<action name="search" class="bookstore3.Action.Search" method="execute">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="addToCart" class="bookstore3.Action.AddToCart"
+			method="execute">
+			<result name="success">/index.jsp</result>
+			<result name="login">/login.jsp</result>
+		</action>
+		<action name="save" class="bookstore3.Action.Save" method="execute">
+			<result name="success">/cart.jsp</result>
+		</action>
+		<action name="checkOut" class="bookstore3.Action.CheckOut"
+			method="execute">
+			<result name="login">/index.jsp</result>
+			<result name="success">/checkout.jsp</result>
+			<result name="error">/cart.jsp</result>
+		</action>
+		<action name="showProfile" class="bookstore3.Action.Profile.ShowProfile">
+			<result name="success">profile.jsp</result>
+		</action>
+		<action name="addProfile" class="bookstore3.Action.Profile.AddProfile">
+			<result name="success">profile.jsp</result>
+			<result name="error">profile.jsp</result>
+		</action>
+		<action name="download" class="bookstore3.Action.Profile.Download">
+			<result name="success">profile.jsp</result>
+		</action>
+		<action name="removeProfile" class="bookstore3.Action.Profile.RemoveProfile">
+			<result name="success">profile.jsp</result>
+		</action>
+	</package>
+	<package name="json" extends="json-default">
+		<action name="showUser" class="bookstore3.Action.ShowUserAction"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="addUser" class="bookstore3.Action.AddUserAction"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="editUser" class="bookstore3.Action.EditUserAction"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="removeUser" class="bookstore3.Action.RemoveUserAction"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="showBook" class="bookstore3.Action.ShowBookAction"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="addBook" class="bookstore3.Action.AddBookAction"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="editBook" class="bookstore3.Action.EditBookAction"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="removeBook" class="bookstore3.Action.RemoveBookAction"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="showOrder" class="bookstore3.Action.ShowOrderAction"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+		<action name="showOrderDetail" class="bookstore3.Action.OrderDetailAction"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="removeOrder" class="bookstore3.Action.RemoveOrderAction"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="showCategory" class="bookstore3.Action.ShowCategoryAction"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="addCategory" class="bookstore3.Action.AddCategoryAction"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="removeCategory" class="bookstore3.Action.RemoveCategoryAction"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="showUserStatistic" class="bookstore3.Action.ShowUserStatistic"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="showDateStatistic" class="bookstore3.Action.ShowDateStatistic"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="showBookStatistic" class="bookstore3.Action.ShowBookStatistic"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="showCategoryStatistic" class="bookstore3.Action.ShowCategoryStatistic"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="register" class="bookstore3.Action.Register"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+		<action name="showDetail" class="bookstore3.Action.ShowDetail"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="renameProfile" class="bookstore3.Action.Profile.RenameProfile"
+			method="execute">
+			<result type="json">
+				<param name="root">result</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

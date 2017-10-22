@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">  
+<beans>  
+   <bean id ="user" class = "bookstore3.Entity.User">
+   </bean>
+   <bean id ="category" class = "bookstore3.Entity.Category">
+   </bean>
+   <bean id ="book" class="bookstore3.Entity.Book">
+   </bean>
+   <bean id ="userDaoImpl" class = "bookstore3.DAO.UserDaoImpl" >
+   </bean>
+   <bean id = "userService" class="bookstore3.Service.UserServiceImpl">
+    <property name="userDao">
+        <ref local="userDaoImpl"/>
+    </property>    
+   </bean>
+   <bean id ="bookDaoImpl" class = "bookstore3.DAO.BookDaoImpl" >
+   </bean>
+   <bean id = "bookService" class="bookstore3.Service.BookServiceImpl">
+    <property name="bookDao">
+        <ref local="bookDaoImpl"/>
+    </property>    
+   </bean>
+    <bean id ="categoryDaoImpl" class = "bookstore3.DAO.CategoryDaoImpl" >
+   </bean>
+   <bean id = "categoryService" class="bookstore3.Service.CategoryServiceImpl">
+    <property name="categoryDao">
+        <ref local="categoryDaoImpl"/>
+    </property>    
+   </bean>
+    <bean id ="orderDaoImpl" class = "bookstore3.DAO.OrderDaoImpl" >
+   </bean>
+   <bean id = "orderService" class="bookstore3.Service.OrderServiceImpl">
+    <property name="orderDao">
+        <ref local="orderDaoImpl"/>
+    </property>    
+   </bean>
+   <bean id ="statisticDaoImpl" class = "bookstore3.DAO.StatisticDaoImpl" >
+   </bean>
+   <bean id = "statisticService" class="bookstore3.Service.StatisticServiceImpl">
+    <property name="statisticDao">
+        <ref local="statisticDaoImpl"/>
+    </property>    
+   </bean>
+</beans>

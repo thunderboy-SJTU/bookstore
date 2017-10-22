@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="bookstore3.Entity.Order" table="orders">
+		<id name="orderid" column="orderid" unsaved-value="null">
+			<generator class="native"></generator>
+		</id>
+		<many-to-one name="user" column="username" class="bookstore3.Entity.User"></many-to-one>
+		<bag name="items" table="order_items" lazy="false" order-by="isbn" cascade="all"> 
+			<key column="orderid"></key>
+			<composite-element class="bookstore3.Entity.Item">
+			    <many-to-one name="book" column="isbn" class="bookstore3.Entity.Book"></many-to-one>
+				<property name="quantity"></property>				
+			</composite-element>
+		</bag>
+		<property name="date" type="java.sql.Date">
+		<column name="datetime"></column>
+		</property>		
+	</class>
+</hibernate-mapping>
